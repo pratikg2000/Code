@@ -1,0 +1,130 @@
+import {StyleSheet} from 'react-native';
+import {
+  moderateScale,
+  scale,
+  ScaledSheet,
+  verticalScale,
+} from 'react-native-size-matters';
+
+const styles = ScaledSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  viewOuterContainer: {
+    backgroundColor: 'white',
+    flex: 1,
+    paddingHorizontal: scale(15),
+    width: '100%',
+  },
+  txtSignUp: {
+    fontSize: '22@ms',
+    color: 'rgba(10, 20, 47, 1)',
+    textAlign: 'center',
+    padding: '10@s',
+    marginBottom: '30@vs',
+  },
+  txtFirst: {
+    fontSize: '16@ms',
+    color: 'black',
+    paddingBottom: '5@vs',
+  },
+  inputPassword: {
+    height: '45@vs',
+    width: '100%',
+    borderColor: 'rgba(210, 212, 233, 1)',
+    marginBottom: '10@vs',
+    paddingHorizontal: '10@s',
+    borderRadius: '10@s',
+    borderWidth: scale(1),
+    fontSize: '18@ms',
+    color: 'black',
+    flexDirection: 'row',
+  },
+  notificationImage: {
+    width: scale(37),
+    height: verticalScale(42),
+    marginTop: verticalScale(78),
+    marginLeft: scale(295),
+    position: 'absolute',
+  },
+  profileImage: {
+    width: scale(50),
+    height: verticalScale(50),
+    marginTop: verticalScale(74),
+    marginLeft: scale(230),
+    borderRadius: scale(5),
+    position: 'absolute',
+  },
+  txtWelcome: {
+    width: scale(97),
+    height: verticalScale(22),
+    marginTop: verticalScale(148),
+    marginLeft: scale(20),
+    position: 'absolute',
+    color: '#FFFFFF',
+  },
+  txtHello: {
+    fontWeight: '600',
+    fontSize: scale(18),
+    lineHeight: scale(25),
+    width: scale(105),
+    height: verticalScale(22),
+    marginTop: verticalScale(123),
+    marginLeft: scale(20),
+    position: 'absolute',
+    color: '#FFFFFF',
+  },
+  imgLaundry: {
+    height: verticalScale(60),
+    width: scale(50),
+    marginTop: verticalScale(51),
+    marginLeft: scale(20),
+  },
+  backImage: {
+    height: verticalScale(230),
+    width: '100%',
+  },
+  txtService: {
+    color: ' rgba(59, 49, 158, 1)',
+    fontWeight: '600',
+    fontSize: moderateScale(22),
+    width: scale(82),
+    height: verticalScale(26),
+    marginTop: verticalScale(10),
+    marginLeft: scale(20),
+  },
+  txtContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  txtSee: {
+    width: scale(58),
+    height: verticalScale(21),
+    fontSize: scale(18),
+    marginRight: scale(20),
+    marginTop: verticalScale(16),
+    lineHeight: scale(20),
+    fontWeight: '500',
+    color: ' rgba(35, 81, 219, 1)',
+  },
+  dotContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#ccc',
+    marginHorizontal: 5,
+  },
+  activeDot: {
+    backgroundColor: '#4A4EB6',
+  },
+});
+
+export default styles;
