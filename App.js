@@ -1,42 +1,39 @@
-// import {StatusBar, StyleSheet} from 'react-native';
-// import React from 'react';
-// import {NavigationContainer} from '@react-navigation/native';
-// import StackNavigation from './src/navigation/StackNavigation';
-
-// const App = () => {
-//   return (
-//     <StatusBar>
-//       <NavigationContainer>
-//         <StackNavigation />
-//       </NavigationContainer>
-//     </StatusBar>
-//   );
-// };
-
-// export default App;
-
-// const styles = StyleSheet.create({});
-
-import {StatusBar, StyleSheet} from 'react-native';
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import StackNavigation from './src/navigation/StackNavigation';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Provider} from 'react-redux';
+import store from './src/store/store';
+import HomeScreen from './src/screen/HomeScreen';
+import DetailsScreen from './src/screen/DetailsScreen';
+import FavoritesScreen from './src/screen/FavoritesScreen';
+
+const Stack = createStackNavigator();
+
+const AppNavigator = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Favorites" component={FavoritesScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <StatusBar
-        barStyle="white"
+        barStyle="light-content"
         backgroundColor="transparent"
         translucent={true}
       />
-      <NavigationContainer>
-        <StackNavigation />
-      </NavigationContainer>
-    </>
+      <AppNavigator />
+    </Provider>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
